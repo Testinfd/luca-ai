@@ -35,7 +35,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [chatSession, setChatSession] = useState<Chat | null>(null);
   const [currentLanguage, setCurrentLanguage] = useState<Language>(Language.EN);
-  const apiKey = process.env.API_KEY;
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   const currentTranslations = translations[currentLanguage];
 
