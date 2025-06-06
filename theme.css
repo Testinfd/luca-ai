@@ -1,0 +1,122 @@
+:root {
+  /* Default theme variables - will be overridden by JS */
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-accent: #ec4899;
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-textSecondary: #6b7280;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+  
+  /* Apply transitions for smooth theme changes */
+  --transition-theme: background-color 0.3s, color 0.3s, border-color 0.3s, fill 0.3s, stroke 0.3s;
+}
+
+/* Base styles using CSS variables */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: var(--transition-theme);
+}
+
+/* Apply transitions to common elements */
+button, a, input, textarea, select, div, span, svg, path {
+  transition: var(--transition-theme);
+}
+
+/* Chat message styles */
+.chat-message {
+  background-color: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.chat-message.user {
+  background-color: rgba(var(--color-primary-rgb, 99, 102, 241), 0.1);
+}
+
+.chat-message.ai {
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-secondary);
+}
+
+.chat-message.system {
+  background-color: rgba(var(--color-error-rgb, 239, 68, 68), 0.1);
+  border-left: 3px solid var(--color-error);
+}
+
+/* Code block styles */
+pre {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(var(--color-text-rgb, 31, 41, 55), 0.1);
+}
+
+code {
+  color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb, 236, 72, 153), 0.1);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Buttons */
+.primary-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: var(--color-secondary);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+}
+
+.secondary-button:hover {
+  background-color: rgba(var(--color-primary-rgb, 99, 102, 241), 0.1);
+}
+
+/* Convert hex to RGB for opacity usage via custom properties */
+:root {
+  --color-primary-rgb: 99, 102, 241;
+  --color-secondary-rgb: 139, 92, 246;
+  --color-accent-rgb: 236, 72, 153;
+  --color-text-rgb: 31, 41, 55;
+  --color-error-rgb: 239, 68, 68;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] {
+  --color-primary-rgb: 129, 140, 248;
+  --color-secondary-rgb: 167, 139, 250;
+  --color-accent-rgb: 244, 114, 182;
+  --color-text-rgb: 249, 250, 251;
+  --color-error-rgb: 248, 113, 113;
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+} 

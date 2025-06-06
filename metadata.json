@@ -1,0 +1,5 @@
+{
+  "name": "Luca AI",
+  "description": "An AI-powered assistant to help students with their study-related questions, providing clear and concise answers, now with image support.",
+  "requestFramePermissions": ["camera", "microphone"]
+}
