@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { Theme, ThemeMode } from '../types';
 import { 
-  getThemeByName, 
   getThemeByMode, 
   loadThemePreference, 
   saveThemePreference 
